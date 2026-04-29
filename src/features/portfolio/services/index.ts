@@ -1,0 +1,1 @@
+export { createContactMailtoUrl } from './contactService'
