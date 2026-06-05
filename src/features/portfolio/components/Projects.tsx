@@ -21,8 +21,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className={`group p-6 transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,255,136,0.22)] reveal reveal-delay-${Math.min(index + 1, 4)}`}
       tone={project.tone}
     >
-      <div className="flex flex-wrap items-start justify-between gap-5">
-        <div className="min-w-0 flex-1">
+      <div className="flex flex-col flex-wrap items-start justify-between gap-5 md:flex-row">
+        <div className="min-w-0 w-full flex-1 md:w-auto">
           <div className="mb-4 flex flex-wrap items-center gap-3">
             <span className="border border-accent/40 bg-accent/10 px-2 py-1 font-heading text-[0.5rem] uppercase tracking-[2px] text-accent">
               {project.level}
@@ -35,11 +35,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </span>
           </div>
 
-          <h3 className="mb-3 font-heading text-[clamp(0.7rem,2vw,0.95rem)] uppercase leading-7 text-primary neon-glow">
+          <h3 className="mb-3 max-w-full break-words font-heading text-[clamp(0.7rem,2vw,0.95rem)] uppercase leading-7 text-primary neon-glow">
             {project.name}
           </h3>
 
-          <p className="mb-4 font-mono text-sm leading-7 text-foreground/65">
+          <p className="mb-4 max-w-full break-words font-mono text-sm leading-7 text-foreground/65">
             &gt; {project.description}
           </p>
 
@@ -69,7 +69,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         <a
-          className="game-btn inline-flex items-center gap-2 text-[0.55rem]"
+          className="game-btn inline-flex w-full max-w-full items-center justify-center gap-2 self-start text-center text-[0.55rem] sm:w-auto md:ml-auto md:shrink-0"
           href={project.href}
           target={isSectionLink ? undefined : '_blank'}
           rel={isSectionLink ? undefined : 'noopener noreferrer'}
